@@ -36,8 +36,12 @@ function testFormatFullName() {
   for (let testCase of testCases) {
     let testNumber = testCases.indexOf(testCase) + 1
 
+    let [testCaseArg1, testCaseArg2] = testCase.input
+    testCaseArg1 = JSON.stringify(testCaseArg1)
+    testCaseArg2 = JSON.stringify(testCaseArg2)
+
     console.log(`TEST ${testNumber}:`)
-    console.log(`- Input:           "${[...testCase.input].join('", "')}"`)
+    console.log(`- Input:           (${testCaseArg1}, ${testCaseArg2})`)
     console.log(`- Expected Output: "${testCase.expected_output}"`)
     console.log(`- Actual Output:   "${formatFullName(...testCase.input)}"`)
 

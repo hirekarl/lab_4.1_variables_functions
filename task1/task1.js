@@ -19,9 +19,13 @@
 //
 // 3. Add a condition that checks if either the first or last name is missing.
 //    If so, return a string saying "Invalid name input."
+
+// ____________________________________________________________________________
+// Main
 // ____________________________________________________________________________
 
 function capitalizeFirstLetter(word) {
+  // return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`
   return `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`
 }
 
@@ -40,10 +44,27 @@ function formatFullName(firstName, lastName) {
   return `${capitalizedLastName}, ${capitalizedFirstName}`
 }
 
-function demoFormatFullName(firstName, lastName) {
-  console.log(formatFullName(firstName, lastName))
+// ____________________________________________________________________________
+// Demo
+// ____________________________________________________________________________
+
+const demoFirstName = "darth"
+const demoLastName = "vader"
+
+function demoFormatFullName(
+  firstName = demoFirstName,
+  lastName = demoLastName
+) {
+  const formattedFullName = JSON.stringify(formatFullName(firstName, lastName))
+  const [arg0, arg1] = [JSON.stringify(firstName), JSON.stringify(lastName)]
+
+  const output = `formatFullName(${arg0}, ${arg1}) returns ${formattedFullName}`
+  console.log(output)
 }
 
-demoFormatFullName("darth", "vader")
+// Only call demoFormatFullName() if this file is executed directly
+if (import.meta.url === `file:///${process.argv[1].replaceAll("\\", "/")}`) {
+  demoFormatFullName()
+}
 
 export { formatFullName }
