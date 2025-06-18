@@ -56,15 +56,16 @@ function demoFormatFullName(
   firstName = demoFirstName,
   lastName = demoLastName
 ) {
+  const result = JSON.stringify(formatFullName(firstName, lastName))
   const [arg0, arg1] = [JSON.stringify(firstName), JSON.stringify(lastName)]
-  const formattedFullName = JSON.stringify(formatFullName(firstName, lastName))
 
-  const output = `formatFullName(${arg0}, ${arg1}) returns ${formattedFullName}.`
+  const output = `formatFullName(${arg0}, ${arg1}) returns ${result}.`
   console.log(output)
 }
 
 // Only call demoFormatFullName() if this file is executed directly
-if (import.meta.url === `file:///${process.argv[1].replaceAll("\\", "/")}`) {
+const url = import.meta.url
+if (url === `file:///${process.argv[1].replaceAll("\\", "/")}`) {
   demoFormatFullName()
 }
 
