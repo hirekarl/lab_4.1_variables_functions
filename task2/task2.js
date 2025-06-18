@@ -75,7 +75,7 @@ function demoCalculateTotalCost(
 //   console.log(output)
 // }
 
-// Only call demoCalculateCost() if this file is executed directly
+// Only call demoCalculateTotalCost() if this file is executed directly
 const url = import.meta.url
 if (url === `file:///${process.argv[1].replaceAll("\\", "/")}`) {
   demoCalculateTotalCost()
