@@ -30,8 +30,8 @@ function capitalizeFirstLetter(word) {
   // return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`
 }
 
-function isValidInput(param1, param2) {
-  return param1 && param1 !== "" && param2 && param2 !== ""
+function isValidInput(param0, param1) {
+  return param0 && param0 !== "" && param1 && param1 !== ""
 }
 
 function formatFullName(firstName, lastName) {
@@ -56,10 +56,10 @@ function demoFormatFullName(
   firstName = demoFirstName,
   lastName = demoLastName
 ) {
-  const formattedFullName = JSON.stringify(formatFullName(firstName, lastName))
   const [arg0, arg1] = [JSON.stringify(firstName), JSON.stringify(lastName)]
+  const formattedFullName = JSON.stringify(formatFullName(firstName, lastName))
 
-  const output = `formatFullName(${arg0}, ${arg1}) returns ${formattedFullName}`
+  const output = `formatFullName(${arg0}, ${arg1}) returns ${formattedFullName}.`
   console.log(output)
 }
 
