@@ -1,9 +1,9 @@
 // ____________________________________________________________________________
 //     __          __    __ __   ___  ___
-//    / /   ____ _/ /_  / // /  <  / <  /
-//   / /   / __ `/ __ \/ // /_  / /  / /
-//  / /___/ /_/ / /_/ /__  __/ / /_ / /
-// /_____/\__,_/_.___/  /_/ (_)_/(_)_/
+//    / /   ____ _/ /_  / // /  <  / <  /       __
+//   / /   / __ `/ __ \/ // /_  / /  / /   (___()'`;
+//  / /___/ /_/ / /_/ /__  __/ / /_ / /    /,    /`
+// /_____/\__,_/_.___/  /_/ (_)_/(_)_/     \\"--\\
 //
 // _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 //
@@ -14,8 +14,8 @@
 //    `firstName` and `lastName`. The function should return the full name in
 //    the format `lastName, firstName`.
 //
-// 2. Format the firstName and lastName so that the first letter of each is
-//    always capitalized.
+// 2. Format the `firstName` and `lastName` so that the first letter of each
+//    is always capitalized.
 //
 // 3. Add a condition that checks if either the first or last name is missing.
 //    If so, return a string saying "Invalid name input."
