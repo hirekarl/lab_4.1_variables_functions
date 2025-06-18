@@ -25,8 +25,9 @@
 // ____________________________________________________________________________
 
 function capitalizeFirstLetter(word) {
-  // return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`
   return `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`
+  // Another implementation that ensures the rest of the word is lowercase:
+  // return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`
 }
 
 function isValidInput(param1, param2) {

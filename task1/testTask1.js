@@ -3,27 +3,27 @@ import { formatFullName } from "./task1.js"
 function testFormatFullName() {
   const testCase1 = {
     input: ["John", "Smith"],
-    expected_output: "Smith, John",
+    expected: "Smith, John",
   }
 
   const testCase2 = {
     input: ["john", "smith"],
-    expected_output: "Smith, John",
+    expected: "Smith, John",
   }
 
   const testCase3 = {
     input: [null, "Smith"],
-    expected_output: "Invalid name input.",
+    expected: "Invalid name input.",
   }
 
   const testCase4 = {
     input: ["Smith"],
-    expected_output: "Invalid name input.",
+    expected: "Invalid name input.",
   }
 
   const testCase5 = {
     input: ["John", ""],
-    expected_output: "Invalid name input.",
+    expected: "Invalid name input.",
   }
 
   const testCases = [testCase1, testCase2, testCase3, testCase4, testCase5]
@@ -33,19 +33,25 @@ function testFormatFullName() {
 
   console.log("========================================")
 
-  for (let testCase of testCases) {
-    let testNumber = testCases.indexOf(testCase) + 1
+  for (const testCase of testCases) {
+    const testNumber = testCases.indexOf(testCase) + 1
 
-    let [testCaseArg1, testCaseArg2] = testCase.input
-    testCaseArg1 = JSON.stringify(testCaseArg1)
-    testCaseArg2 = JSON.stringify(testCaseArg2)
+    const [testCaseArg1, testCaseArg2] = [...testCase.input]
+    const testCaseArg1JSON = JSON.stringify(testCaseArg1)
+    const testCaseArg2JSON = JSON.stringify(testCaseArg2)
+
+    const testCaseExpected = testCase.expected
+    const testCaseExpectedJSON = JSON.stringify(testCase.expected)
+
+    const testCaseActual = formatFullName(...testCase.input)
+    const testCaseActualJSON = JSON.stringify(testCaseActual)
 
     console.log(`TEST ${testNumber}:`)
-    console.log(`- Input:           (${testCaseArg1}, ${testCaseArg2})`)
-    console.log(`- Expected Output: "${testCase.expected_output}"`)
-    console.log(`- Actual Output:   "${formatFullName(...testCase.input)}"`)
+    console.log(`- Input:           [${testCaseArg1JSON}, ${testCaseArg2JSON}]`)
+    console.log(`- Expected Output: ${testCaseExpectedJSON}`)
+    console.log(`- Actual Output:   ${testCaseActualJSON}`)
 
-    if (testCase.expected_output !== formatFullName(...testCase.input)) {
+    if (testCaseExpected !== testCaseActual) {
       failCount++
       console.log("FAIL")
     } else {
