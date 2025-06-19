@@ -111,12 +111,36 @@ function demo() {
     return `${funcName}(${joinedArgs})\n  ${red("→")} ${green(result)}`
   }
 
-  console.log(welcome("Tishana & Bryan"))
-
-  console.log(taskHeader("Task 1: Flexible String Manipulation with Functions"))
-  const demoFormatFullName = (firstName, lastName) => {
+  function demoFormatFullName(firstName, lastName) {
     return demoFunction(formatFullName, firstName, lastName)
   }
+
+  function demoCalculateTotalCost(price, quantity, taxRate) {
+    return demoFunction(calculateTotalCost, price, quantity, taxRate)
+  }
+
+  function demoCheckEligibility(age, isEmployed) {
+    return demoFunction(checkEligibility, age, isEmployed)
+  }
+
+  function demoCalculateTotalCostRefactor(price, cost, taxRate, discount) {
+    return demoFunction(
+      calculateTotalCostRefactor,
+      price,
+      cost,
+      taxRate,
+      discount
+    )
+  }
+
+  console.log(
+    welcome("Tishana & Bryan")
+  )
+
+  console.log(
+    taskHeader("Task 1: Flexible String Manipulation with Functions")
+  )
+
   console.log(demoFormatFullName("Edith", "Wharton"))
   console.log(demoFormatFullName("darth", "vader"))
   console.log(demoFormatFullName("Prince"))
@@ -124,32 +148,32 @@ function demo() {
   console.log(
     taskHeader("Task 2: Mathematical Operations with Multiple Parameters")
   )
-  const demoCalculateTotalCost = (price, quantity, taxRate) => {
-    return demoFunction(calculateTotalCost, price, quantity, taxRate)
-  }
+
   console.log(demoCalculateTotalCost(99.99, 3, 0.0875))
   console.log(demoCalculateTotalCost(5, 7.2, 0.25))
   console.log(demoCalculateTotalCost("six dollars", 1, 0.1))
 
-  console.log(taskHeader("Task 3: Functions with Conditional Logic"))
-  const demoCheckEligibility = (age, isEmployed) => {
-    return demoFunction(checkEligibility, age, isEmployed)
-  }
+  console.log(
+    taskHeader("Task 3: Functions with Conditional Logic")
+  )
+
   console.log(demoCheckEligibility(16, true))
   console.log(demoCheckEligibility(17, false))
   console.log(demoCheckEligibility(18, true))
   console.log(demoCheckEligibility(19, false))
   console.log(demoCheckEligibility(20, true))
 
-  console.log(taskHeader("Task 4: Refactoring for Reusability"))
-  const demoCalculateTotalCostRefactor = (price, cost, taxRate, discount) => {
-    return demoFunction(calculateTotalCostRefactor, price, cost, taxRate, discount)
-  }
+  console.log(
+    taskHeader("Task 4: Refactoring for Reusability")
+  )
+
   console.log(demoCalculateTotalCostRefactor(99.99, 3, 0.0875, 5))
   console.log(demoCalculateTotalCostRefactor(5, 7.2, 0.25))
   console.log(demoCalculateTotalCostRefactor(5, 7.2, 0.25, 7))
   console.log(demoCalculateTotalCostRefactor("six dollars", 1, 0.1))
 
-  console.log(goodbye())
+  console.log(
+    goodbye()
+  )
   console.log("")
 }
