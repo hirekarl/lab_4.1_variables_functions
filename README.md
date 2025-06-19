@@ -33,7 +33,7 @@ In this activity, you will solve more coding challenges that involve creating an
 #### Task 2: Mathematical Operations with Multiple Parameters
 1. Write a function called `calculateTotalCost` that takes three parameters: `price`, `quantity`, and `taxRate`.
 2. The function should calculate the total cost of items, including tax. Use the formula: ```totalCost = (price * quantity) * (1 + taxRate)```
-4. Ensure that `price`, `quantity`, and `taxRate` are all valid numbers. If any are invalid, return a string: `"Invalid input."`
+3. Ensure that `price`, `quantity`, and `taxRate` are all valid numbers. If any are invalid, return a string: `"Invalid input."`
 
 #### Task 3: Functions with Conditional Logic
 1. Write a function called `checkEligibility` that takes two parameters: `age` and `isEmployed`. The function should check if a person is eligible for a program based on the following rules:
