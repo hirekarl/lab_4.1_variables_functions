@@ -7,9 +7,9 @@
 // ____________________________________________________________________________
 
 function capitalizeFirstLetter(word) {
-  return `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`
-  // Another implementation that ensures the rest of the word is lowercase:
+  // Alternate implementation that ensures the rest of the word is lowercase:
   // return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`
+  return `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`
 }
 
 function isValidInput(input0, input1) {
@@ -40,6 +40,9 @@ function calculateTotalCost(price, quantity, taxRate) {
   }
 
   const totalCost = price * quantity * (1 + taxRate)
+
+  // Alternate implementation that returns totalCost with two decimal places:
+  // return totalCost.toFixed(2)
   return totalCost
 }
 
@@ -84,6 +87,9 @@ function calculateTotalCostRefactor(
   }
 
   const totalCost = (price * quantity - discount) * (1 + taxRate)
+
+  // Alternate implementation that returns totalCost with two decimal places:
+  // return totalCost.toFixed(2)
   return totalCost
 }
 
