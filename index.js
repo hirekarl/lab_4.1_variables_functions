@@ -92,8 +92,9 @@ function calculateTotalCostRefactor(
 // Demo Code
 // ____________________________________________________________________________
 
-function demo() {
+demo()
 
+function demo() {
   // - - - - - - - - - - - - - - - Welcome - - - - - - - - - - - - - - - - - -
 
   console.log("")
@@ -166,7 +167,7 @@ function demo() {
 
   function demoCheckEligibility(name, age, isEmployed) {
     let output = checkEligibility(age, isEmployed)
-    output = `${output.replace("The person", name)}`
+    output = `\x1b[32m${output.replace("The person", name)}\x1b[0m`
 
     console.log(output)
   }
@@ -211,15 +212,15 @@ function demo() {
   demoCalculateTotalCostRefactor(5, 7.2, 0.25, 7)
   demoCalculateTotalCostRefactor("six dollars", 1, 0.1)
 
+  // - - - - - - - - - - - - - - - Goodbye- - - - - - - - - - - - - - - - - -
+
   console.log("")
   console.log(
     "\x1b[32m- - - - - - - - - - - - - - - - - - - - - - - - - -\x1b[0m"
   )
-  console.log("                \x1b[33mHave a nice day\x1b[0m 💻")
+  console.log("                 \x1b[33mHave a nice day\x1b[0m 🚀")
   console.log(
     "\x1b[32m- - - - - - - - - - - - - - - - - - - - - - - - - -\x1b[0m"
   )
   console.log("")
 }
-
-demo()
