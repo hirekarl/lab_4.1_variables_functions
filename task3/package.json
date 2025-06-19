@@ -1,13 +1,13 @@
 {
-  "name": "task2",
+  "name": "task3",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "task2.js",
+  "main": "task3.js",
   "scripts": {
-    "start": "node task2.js",
+    "start": "node task3.js",
     "lint": "npx eslint",
     "test": "jest --coverage"
   },

@@ -36,48 +36,20 @@ function calculateTotalCost(price, quantity, taxRate) {
   return totalCost
 }
 
-// An implementation that rounds the result to two decimal places:
-// function calculateTotalCostTwoDecimals(price, quantity, taxRate) {
-//   return calculateTotalCost(price, quantity, taxRate).toFixed(2)
-// }
-
 // ____________________________________________________________________________
 // Demo
 // ____________________________________________________________________________
 
-const demoPrice = 99.99
-const demoQuantity = 3
-const demoTaxRate = 0.0875 // NYC sales tax
-
-function demoCalculateTotalCost(
-  price = demoPrice,
-  quantity = demoQuantity,
-  taxRate = demoTaxRate
-) {
-  const result = calculateTotalCost(price, quantity, taxRate)
+function demoCalculateTotalCost(price, quantity, taxRate) {
+  const result =  JSON.stringify(calculateTotalCost(price, quantity, taxRate))
   const [arg0, arg1, arg2] = [price, quantity, taxRate]
 
   const output = `calculateTotalCost(${arg0}, ${arg1}, ${arg2}) returns ${result}.`
   console.log(output)
 }
 
-// function demoCalculateTotalCostTwoDecimals(
-//   price = demoPrice,
-//   quantity = demoQuantity,
-//   taxRate = demoTaxRate
-// ) {
-//   const arg0 = price
-//   const arg1 = quantity
-//   const arg2 = taxRate
-//   const result = calculateTotalCostTwoDecimals(price, quantity, taxRate)
+demoCalculateTotalCost(99.99, 3, 0.0875)
+demoCalculateTotalCost(5, 7.2, 0.25)
+demoCalculateTotalCost("six dollars", 1, 0.1)
 
-//   const output = `calculateTotalCostTwoDecimals(${arg0}, ${arg1}, ${arg2}) returns ${result}.`
-//   console.log(output)
-// }
-
-// Only call demoCalculateTotalCost() if this file is executed directly
-const url = import.meta.url
-if (url === `file:///${process.argv[1].replaceAll("\\", "/")}`) {
-  demoCalculateTotalCost()
-  // demoCalculateTotalCostTwoDecimals()
-}
+export { calculateTotalCost }

@@ -49,13 +49,7 @@ function formatFullName(firstName, lastName) {
 // Demo
 // ____________________________________________________________________________
 
-const demoFirstName = "darth"
-const demoLastName = "vader"
-
-function demoFormatFullName(
-  firstName = demoFirstName,
-  lastName = demoLastName
-) {
+function demoFormatFullName(firstName, lastName) {
   const result = JSON.stringify(formatFullName(firstName, lastName))
   const [arg0, arg1] = [JSON.stringify(firstName), JSON.stringify(lastName)]
 
@@ -63,10 +57,8 @@ function demoFormatFullName(
   console.log(output)
 }
 
-// Only call demoFormatFullName() if this file is executed directly
-const url = import.meta.url
-if (url === `file:///${process.argv[1].replaceAll("\\", "/")}`) {
-  demoFormatFullName()
-}
+demoFormatFullName("Edith", "Wharton")
+demoFormatFullName("darth", "vader")
+demoFormatFullName("Prince")
 
 export { formatFullName }
