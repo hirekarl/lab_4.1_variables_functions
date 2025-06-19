@@ -1,0 +1,19 @@
+{
+  "name": "task4",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "task4.js",
+  "scripts": {
+    "start": "node task4.js",
+    "lint": "npx eslint",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "jest": "^30.0.1"
+  }
+}

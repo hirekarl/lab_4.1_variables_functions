@@ -45,17 +45,17 @@ function checkEligibility(age, isEmployed) {
 // Demo
 // ____________________________________________________________________________
 
-function demoCalculateTotalCost(name, age, isEmployed) {
+function demoCheckEligibility(name, age, isEmployed) {
   let output = checkEligibility(age, isEmployed)
   output = output.replace("The person", name)
 
   console.log(output)
 }
 
-demoCalculateTotalCost("Matthew", 16, true)
-demoCalculateTotalCost("Mark", 17, false)
-demoCalculateTotalCost("Luke", 18, true)
-demoCalculateTotalCost("John", 19, false)
-demoCalculateTotalCost("Ringo", 20, true)
+demoCheckEligibility("Matthew", 16, true)
+demoCheckEligibility("Mark", 17, false)
+demoCheckEligibility("Luke", 18, true)
+demoCheckEligibility("John", 19, false)
+demoCheckEligibility("Ringo", 20, true)
 
 export { checkEligibility }

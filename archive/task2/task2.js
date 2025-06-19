@@ -41,10 +41,14 @@ function calculateTotalCost(price, quantity, taxRate) {
 // ____________________________________________________________________________
 
 function demoCalculateTotalCost(price, quantity, taxRate) {
-  const result =  JSON.stringify(calculateTotalCost(price, quantity, taxRate))
-  const [arg0, arg1, arg2] = [price, quantity, taxRate]
+  const result = JSON.stringify(calculateTotalCost(price, quantity, taxRate))
+  const [arg0, arg1, arg2] = [
+    JSON.stringify(price),
+    JSON.stringify(quantity),
+    JSON.stringify(taxRate),
+  ]
 
-  const output = `calculateTotalCost(${arg0}, ${arg1}, ${arg2}) returns ${result}.`
+  const output = `calculateTotalCost(${arg0}, ${arg1}, ${arg2}) → ${result}`
   console.log(output)
 }
 
