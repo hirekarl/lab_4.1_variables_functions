@@ -60,7 +60,7 @@ function checkEligibility(age, isEmployed) {
     }
   }
 
-  return `The person is ${age} years old and ${employment}: they are ${status}.`
+  return `The person is ${age} years old and ${employment}: ${status}.`
 }
 
 // Task 4: Refactoring for Reusability
@@ -89,138 +89,61 @@ function calculateTotalCostRefactor(
 
 // ____________________________________________________________________________
 // ----------------------------------------------------------------------------
-// Demo Code
+// Demo
 // ____________________________________________________________________________
 
 demo()
 
+import { red, green } from "./utilities/colorize.js"
+import { welcome, taskHeader, goodbye } from "./utilities/decorations.js"
+
 function demo() {
-  // - - - - - - - - - - - - - - - Welcome - - - - - - - - - - - - - - - - - -
-
-  console.log("")
-  console.log(
-    "\x1b[32m- - - - - - - - - - - - - - - - - - - - - - - - - -\x1b[0m"
-  )
-  console.log("          \x1b[33mWelcome, Tishana and Bryan\x1b[0m 💻")
-  console.log(
-    "\x1b[32m- - - - - - - - - - - - - - - - - - - - - - - - - -\x1b[0m"
-  )
-  console.log("")
-
-  // - - - - - - - - - - - - - - - -Task 1 - - - - - - - - - - - - - - - - - -
-
-  console.log(
-    "\x1b[35m___________________________________________________\x1b[0m"
-  )
-  console.log(
-    "\x1b[34mTask 1: Flexible String Manipulation with Functions\x1b[0m"
-  )
-  console.log("")
-
-  function demoFormatFullName(firstName, lastName) {
-    const result = JSON.stringify(formatFullName(firstName, lastName))
-    const [arg0, arg1] = [JSON.stringify(firstName), JSON.stringify(lastName)]
-
-    const output = `formatFullName(${arg0}, ${arg1})\n  \x1b[31m→\x1b[0m \x1b[32m${result}\x1b[0m`
-    console.log(output)
+  function demoFunction(func, ...args) {
+    const funcName = func.name
+    const joinedArgs = args.map((arg) => JSON.stringify(arg)).join(", ")
+    const result = JSON.stringify(func(...args))
+    return `${funcName}(${joinedArgs})\n  ${red("→")} ${green(result)}`
   }
 
-  demoFormatFullName("Edith", "Wharton")
-  demoFormatFullName("darth", "vader")
-  demoFormatFullName("Prince")
+  console.log(welcome("Tishana & Bryan"))
 
-  // - - - - - - - - - - - - - - - -Task 2 - - - - - - - - - - - - - - - - - -
-
-  console.log("")
-  console.log(
-    "\x1b[35m___________________________________________________\x1b[0m"
-  )
-  console.log(
-    "\x1b[34mTask 2: Mathematical Operations with Multiple Parameters\x1b[0m"
-  )
-  console.log("")
-
-  function demoCalculateTotalCost(price, quantity, taxRate) {
-    const result = JSON.stringify(calculateTotalCost(price, quantity, taxRate))
-    const [arg0, arg1, arg2] = [
-      JSON.stringify(price),
-      JSON.stringify(quantity),
-      JSON.stringify(taxRate),
-    ]
-
-    const output = `calculateTotalCost(${arg0}, ${arg1}, ${arg2})\n  \x1b[31m→\x1b[0m \x1b[32m${result}\x1b[0m`
-    console.log(output)
+  console.log(taskHeader("Task 1: Flexible String Manipulation with Functions"))
+  const demoFormatFullName = (firstName, lastName) => {
+    return demoFunction(formatFullName, firstName, lastName)
   }
+  console.log(demoFormatFullName("Edith", "Wharton"))
+  console.log(demoFormatFullName("darth", "vader"))
+  console.log(demoFormatFullName("Prince"))
 
-  demoCalculateTotalCost(99.99, 3, 0.0875)
-  demoCalculateTotalCost(5, 7.2, 0.25)
-  demoCalculateTotalCost("six dollars", 1, 0.1)
-
-  // - - - - - - - - - - - - - - - -Task 3 - - - - - - - - - - - - - - - - - -
-
-  console.log("")
   console.log(
-    "\x1b[35m___________________________________________________\x1b[0m"
+    taskHeader("Task 2: Mathematical Operations with Multiple Parameters")
   )
-  console.log("\x1b[34mTask 3: Functions with Conditional Logic\x1b[0m")
-  console.log("")
-
-  function demoCheckEligibility(name, age, isEmployed) {
-    let output = checkEligibility(age, isEmployed)
-    output = `\x1b[32m${output.replace("The person", name)}\x1b[0m`
-
-    console.log(output)
+  const demoCalculateTotalCost = (price, quantity, taxRate) => {
+    return demoFunction(calculateTotalCost, price, quantity, taxRate)
   }
+  console.log(demoCalculateTotalCost(99.99, 3, 0.0875))
+  console.log(demoCalculateTotalCost(5, 7.2, 0.25))
+  console.log(demoCalculateTotalCost("six dollars", 1, 0.1))
 
-  demoCheckEligibility("Matthew", 16, true)
-  demoCheckEligibility("Mark", 17, false)
-  demoCheckEligibility("Luke", 18, true)
-  demoCheckEligibility("John", 19, false)
-  demoCheckEligibility("Ringo", 20, true)
-
-  // - - - - - - - - - - - - - - - -Task 4 - - - - - - - - - - - - - - - - - -
-
-  console.log("")
-  console.log(
-    "\x1b[35m___________________________________________________\x1b[0m"
-  )
-  console.log("\x1b[34mTask 4: Refactoring for Reusability\x1b[0m")
-  console.log("")
-
-  function demoCalculateTotalCostRefactor(
-    price,
-    quantity,
-    taxRate,
-    discount = DEFAULT_DISCOUNT
-  ) {
-    const result = JSON.stringify(
-      calculateTotalCostRefactor(price, quantity, taxRate, discount)
-    )
-    const [arg0, arg1, arg2, arg3] = [
-      JSON.stringify(price),
-      JSON.stringify(quantity),
-      JSON.stringify(taxRate),
-      JSON.stringify(discount),
-    ]
-
-    const output = `calculateTotalCostRefactor(${arg0}, ${arg1}, ${arg2}, ${arg3})\n  \x1b[31m→\x1b[0m \x1b[32m${result}\x1b[0m`
-    console.log(output)
+  console.log(taskHeader("Task 3: Functions with Conditional Logic"))
+  const demoCheckEligibility = (age, isEmployed) => {
+    return demoFunction(checkEligibility, age, isEmployed)
   }
+  console.log(demoCheckEligibility(16, true))
+  console.log(demoCheckEligibility(17, false))
+  console.log(demoCheckEligibility(18, true))
+  console.log(demoCheckEligibility(19, false))
+  console.log(demoCheckEligibility(20, true))
 
-  demoCalculateTotalCostRefactor(99.99, 3, 0.0875, 5)
-  demoCalculateTotalCostRefactor(5, 7.2, 0.25)
-  demoCalculateTotalCostRefactor(5, 7.2, 0.25, 7)
-  demoCalculateTotalCostRefactor("six dollars", 1, 0.1)
+  console.log(taskHeader("Task 4: Refactoring for Reusability"))
+  const demoCalculateTotalCostRefactor = (price, cost, taxRate, discount) => {
+    return demoFunction(calculateTotalCostRefactor, price, cost, taxRate, discount)
+  }
+  console.log(demoCalculateTotalCostRefactor(99.99, 3, 0.0875, 5))
+  console.log(demoCalculateTotalCostRefactor(5, 7.2, 0.25))
+  console.log(demoCalculateTotalCostRefactor(5, 7.2, 0.25, 7))
+  console.log(demoCalculateTotalCostRefactor("six dollars", 1, 0.1))
 
-  // - - - - - - - - - - - - - - - Goodbye- - - - - - - - - - - - - - - - - -
-
-  console.log("")
-  console.log(
-    "\x1b[32m- - - - - - - - - - - - - - - - - - - - - - - - - -\x1b[0m"
-  )
-  console.log("                 \x1b[33mHave a nice day\x1b[0m 🚀")
-  console.log(
-    "\x1b[32m- - - - - - - - - - - - - - - - - - - - - - - - - -\x1b[0m"
-  )
+  console.log(goodbye())
   console.log("")
 }
