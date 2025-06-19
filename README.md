@@ -14,7 +14,7 @@ In the root directory, run:
 node index
 ```
 
-*Note that text coloring may not work in Visual Studio Code's default "Output" window&mdash;run from the terminal.*
+*Note that text coloring may not work in Visual Studio Code's default Output pane with Run Code&mdash;run from the Terminal pane with `node`.*
 
 ### Solution
 View solution source at [`./index.js`](./index.js).
