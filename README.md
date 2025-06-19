@@ -59,11 +59,11 @@ The instructions for these tasks asked mostly for functions that return values, 
 
 When refactoring my code, I applied the principle **Don't Repeat Yourself** to see where I could break bits of repeated code into helper functions, and it seemed prudent to modularize my work on [./utilities/colorize.js](./utilities/colorize.js) and [./utilities/decorations.js](./utilities/decorations.js) in a [./utilities/](./utilities/) subdirectory. I also found an opportunity to practice implementing **higher-order functions** to put wrappers around my demo functions with `demoFunction()`. Maybe this use case is too verbose, but it was helpful for me to, in the end, see the demo section split in half: with the function declarations coming first, and everything related to presenting the output to the terminal below in a series of `console.log()` statements. These `console.log()`s make it explicit that the console side effects in this program are only taking place at the highest level.
 
-1. What challenges did you face while incorporating conditional logic in your functions?
+2. What challenges did you face while incorporating conditional logic in your functions?
 
 I initially had trouble remembering the sequence for elements in a ternary conditional statement in JavaScript for `checkEligibility()`, and I had to work at the nested `if...else` to be sure I was accounting for all given cases. I first implemented the `if...else` clause with a check for `age > 18`, but I remembered that in JavaScript, logical operations short-circuit, so I should deal with the disqualifying case first (`age <= 18`).
 
-1. How does refactoring improve the readability and maintainability of your code?
+3. How does refactoring improve the readability and maintainability of your code?
 
 Refactoring provides an opportunity to discard repeated information, which clutters a codebase and can (eventually) impede performance. It's also an opportunity rename variables, functions, and parameters so their purpose, inputs, and outputs are easy to understand. It was useful to implement the ugly-duckling version of the program first and improve as I iterated&mdash;it allowed me to first think about what functional and logical behaviors needed to be implemented, *then* come back and clarify, get more specific, abstract some stuff away, and reduce pattern repetitions wherever possible.
 
