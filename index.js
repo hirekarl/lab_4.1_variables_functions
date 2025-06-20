@@ -133,47 +133,52 @@ function demo() {
     )
   }
 
-  console.log(
-    welcome("Tishana & Bryan")
-  )
+  console.log(welcome("Tishana & Bryan"))
 
-  console.log(
-    taskHeader("Task 1: Flexible String Manipulation with Functions")
-  )
+  console.log(taskHeader("Task 1: Flexible String Manipulation with Functions"))
 
   console.log(demoFormatFullName("Edith", "Wharton"))
+  // "Wharton, Edith"
   console.log(demoFormatFullName("darth", "vader"))
+  // "Vader, Darth"
   console.log(demoFormatFullName("Prince"))
+  // "Invalid name input."
 
   console.log(
     taskHeader("Task 2: Mathematical Operations with Multiple Parameters")
   )
 
   console.log(demoCalculateTotalCost(99.99, 3, 0.0875))
+  // 326.21737499999995
   console.log(demoCalculateTotalCost(5, 7.2, 0.25))
+  // 45
   console.log(demoCalculateTotalCost("six dollars", 1, 0.1))
+  // "Invalid output."
 
-  console.log(
-    taskHeader("Task 3: Functions with Conditional Logic")
-  )
+  console.log(taskHeader("Task 3: Functions with Conditional Logic"))
 
   console.log(demoCheckEligibility(16, true))
+  // "The person is 16 years old and employed: ineligible."
   console.log(demoCheckEligibility(17, false))
+  // "The person is 17 years old and unemployed: ineligible."
   console.log(demoCheckEligibility(18, true))
+  // "The person is 18 years old and employed: ineligible."
   console.log(demoCheckEligibility(19, false))
+  // "The person is 19 years old and unemployed: conditionally eligible."
   console.log(demoCheckEligibility(20, true))
+  // "The person is 20 years old and employed: eligible."
 
-  console.log(
-    taskHeader("Task 4: Refactoring for Reusability")
-  )
+  console.log(taskHeader("Task 4: Refactoring for Reusability"))
 
   console.log(demoCalculateTotalCostRefactor(99.99, 3, 0.0875, 5))
+  // 320.77987499999995
   console.log(demoCalculateTotalCostRefactor(5, 7.2, 0.25))
+  // 45
   console.log(demoCalculateTotalCostRefactor(5, 7.2, 0.25, 7))
+  //  36.25
   console.log(demoCalculateTotalCostRefactor("six dollars", 1, 0.1))
+  // "Invalid input."
 
-  console.log(
-    goodbye()
-  )
+  console.log(goodbye())
   console.log("")
 }
